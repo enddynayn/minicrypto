@@ -1,0 +1,42 @@
+AllCops:
+  Exclude:
+    - 'bin/*'
+    - 'doc/*'
+    - 'config/boot.rb'
+    - 'Guardfile'
+  TargetRubyVersion: 2.3
+
+Rails:
+  Enabled: true
+
+# Mongoid doesn't support has_many :through
+Rails/HasAndBelongsToMany:
+  Enabled: false
+
+# Mongoid raises an error for find_by
+Rails/FindBy:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/SignalException:
+  EnforcedStyle: only_raise
+
+Style/Lambda:
+  Enabled: false
+
+Metrics/BlockLength:
+  ExcludedMethods: ['describe', 'context']
+
+Metrics/LineLength:
+  Max: 100
+
+Performance/Casecmp:
+  Enabled: false
+
+Style/PercentLiteralDelimiters:
+  PreferredDelimiters:
+    default: ()
+    '%i': ()
+    '%w': ()
